@@ -1,0 +1,892 @@
+[orientation] failed to normalize PDF orientation for sample.pdf: Failed to open file '/var/folders/m0/j025h82j22d1r_mkmc6q2s_m0000gp/T/tmpu_n4jx98/sample.pdf'.
+{
+  "benchmark_id": "super_agent_golden_min_v1",
+  "case_count": 9,
+  "passed_count": 6,
+  "failed_count": 3,
+  "pass_rate": 0.6667,
+  "capability_case_count": 4,
+  "capability_passed_count": 4,
+  "capability_pass_rate": 1.0,
+  "degraded_count": 5,
+  "degradation_rate": 0.5556,
+  "average_quality_score": 0.537,
+  "average_structure_coverage": 0.8889,
+  "average_structure_tree_f1": 0.5556,
+  "structure_f1_gate_passed": true,
+  "average_table_f1": 0.2222,
+  "table_f1_gate_passed": true,
+  "min_average_table_f1": null,
+  "average_elapsed_ms": 62,
+  "p95_elapsed_ms": 240,
+  "max_p95_elapsed_ms": 120000,
+  "latency_gate_passed": true,
+  "latency_gate_failures": [],
+  "gate_passed": false,
+  "min_average_structure_tree_f1": 0.5,
+  "schema_valid_count": 9,
+  "errors_by_category": {
+    "unknown": 3,
+    "parse_error": 1,
+    "unsupported_format": 1
+  },
+  "elapsed_ms": 560,
+  "failed_cases": [
+    {
+      "case_id": "gnc_single_doc",
+      "type": "structure",
+      "passed": false,
+      "elapsed_ms": 11,
+      "capability_passed": false,
+      "degraded": true,
+      "quality_score": 0.02,
+      "schema_valid": true,
+      "error_categories": [
+        "unknown"
+      ],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 1.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 1.0,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 0.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 0,
+        "toc_entry_count": 0,
+        "evidence_count": 0,
+        "chunk_count": 0,
+        "document_count": 0,
+        "extracted_parameter_count": 0,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 0,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 0,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 0,
+        "degraded_count": 1,
+        "failed_count": 1,
+        "execution_pass_rate": 0.0,
+        "capability_pass_rate": 0.0,
+        "degradation_rate": 1.0
+      },
+      "warnings": [
+        "文件不存在或路径无效: gnc_design.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/design_solution.md)"
+      ],
+      "errors": [
+        "evidence_count below threshold",
+        "extracted_parameter_count below threshold",
+        "structure_tree_f1 0.0 below 1.0"
+      ]
+    },
+    {
+      "case_id": "gnc_multi_doc",
+      "type": "structure_multi",
+      "passed": false,
+      "elapsed_ms": 0,
+      "capability_passed": false,
+      "degraded": true,
+      "quality_score": 0.0,
+      "schema_valid": true,
+      "error_categories": [
+        "unknown"
+      ],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 1.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 1.0,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 0.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 0,
+        "toc_entry_count": 0,
+        "evidence_count": 0,
+        "chunk_count": 0,
+        "document_count": 0,
+        "extracted_parameter_count": 0,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 0,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 0,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 0,
+        "degraded_count": 2,
+        "failed_count": 2,
+        "execution_pass_rate": 0.0,
+        "capability_pass_rate": 0.0,
+        "degradation_rate": 1.0
+      },
+      "warnings": [
+        "文件不存在或路径无效: requirements_spec.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/requirements_spec.md)",
+        "文件不存在或路径无效: design_solution.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/design_solution.md)"
+      ],
+      "errors": [
+        "evidence_count below threshold",
+        "trace_link_candidate_count below threshold",
+        "structure_tree_f1 0.0 below 1.0"
+      ]
+    },
+    {
+      "case_id": "review_plus_three_slot",
+      "type": "review_plus_package_structure",
+      "passed": false,
+      "elapsed_ms": 0,
+      "capability_passed": false,
+      "degraded": true,
+      "quality_score": 0.0,
+      "schema_valid": true,
+      "error_categories": [
+        "unknown"
+      ],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 1.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 1.0,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 0.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 0,
+        "toc_entry_count": 0,
+        "evidence_count": 0,
+        "chunk_count": 0,
+        "document_count": 0,
+        "extracted_parameter_count": 0,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 0,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 0,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 0,
+        "degraded_count": 3,
+        "failed_count": 3,
+        "execution_pass_rate": 0.0,
+        "capability_pass_rate": 0.0,
+        "degradation_rate": 1.0
+      },
+      "warnings": [
+        "文件不存在或路径无效: review_rule.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/review_plus_full_chain/review_rule.md)",
+        "文件不存在或路径无效: requirements_spec.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/review_plus_full_chain/requirements_spec.md)",
+        "文件不存在或路径无效: design_solution.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/review_plus_full_chain/design_solution.md)"
+      ],
+      "errors": [
+        "evidence_count below threshold",
+        "extracted_parameter_count below threshold",
+        "structure_tree_f1 0.0 below 1.0"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "case_id": "gnc_single_doc",
+      "type": "structure",
+      "passed": false,
+      "elapsed_ms": 11,
+      "capability_passed": false,
+      "degraded": true,
+      "quality_score": 0.02,
+      "schema_valid": true,
+      "error_categories": [
+        "unknown"
+      ],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 1.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 1.0,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 0.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 0,
+        "toc_entry_count": 0,
+        "evidence_count": 0,
+        "chunk_count": 0,
+        "document_count": 0,
+        "extracted_parameter_count": 0,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 0,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 0,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 0,
+        "degraded_count": 1,
+        "failed_count": 1,
+        "execution_pass_rate": 0.0,
+        "capability_pass_rate": 0.0,
+        "degradation_rate": 1.0
+      },
+      "warnings": [
+        "文件不存在或路径无效: gnc_design.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/design_solution.md)"
+      ],
+      "errors": [
+        "evidence_count below threshold",
+        "extracted_parameter_count below threshold",
+        "structure_tree_f1 0.0 below 1.0"
+      ]
+    },
+    {
+      "case_id": "gnc_multi_doc",
+      "type": "structure_multi",
+      "passed": false,
+      "elapsed_ms": 0,
+      "capability_passed": false,
+      "degraded": true,
+      "quality_score": 0.0,
+      "schema_valid": true,
+      "error_categories": [
+        "unknown"
+      ],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 1.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 1.0,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 0.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 0,
+        "toc_entry_count": 0,
+        "evidence_count": 0,
+        "chunk_count": 0,
+        "document_count": 0,
+        "extracted_parameter_count": 0,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 0,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 0,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 0,
+        "degraded_count": 2,
+        "failed_count": 2,
+        "execution_pass_rate": 0.0,
+        "capability_pass_rate": 0.0,
+        "degradation_rate": 1.0
+      },
+      "warnings": [
+        "文件不存在或路径无效: requirements_spec.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/requirements_spec.md)",
+        "文件不存在或路径无效: design_solution.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/design_solution.md)"
+      ],
+      "errors": [
+        "evidence_count below threshold",
+        "trace_link_candidate_count below threshold",
+        "structure_tree_f1 0.0 below 1.0"
+      ]
+    },
+    {
+      "case_id": "review_plus_three_slot",
+      "type": "review_plus_package_structure",
+      "passed": false,
+      "elapsed_ms": 0,
+      "capability_passed": false,
+      "degraded": true,
+      "quality_score": 0.0,
+      "schema_valid": true,
+      "error_categories": [
+        "unknown"
+      ],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 1.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 1.0,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 0.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 0,
+        "toc_entry_count": 0,
+        "evidence_count": 0,
+        "chunk_count": 0,
+        "document_count": 0,
+        "extracted_parameter_count": 0,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 0,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 0,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 0,
+        "degraded_count": 3,
+        "failed_count": 3,
+        "execution_pass_rate": 0.0,
+        "capability_pass_rate": 0.0,
+        "degradation_rate": 1.0
+      },
+      "warnings": [
+        "文件不存在或路径无效: review_rule.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/review_plus_full_chain/review_rule.md)",
+        "文件不存在或路径无效: requirements_spec.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/review_plus_full_chain/requirements_spec.md)",
+        "文件不存在或路径无效: design_solution.md (/Users/simo/project/mineru/data-agent/tests/fixtures/review_docs/review_plus_full_chain/design_solution.md)"
+      ],
+      "errors": [
+        "evidence_count below threshold",
+        "extracted_parameter_count below threshold",
+        "structure_tree_f1 0.0 below 1.0"
+      ]
+    },
+    {
+      "case_id": "xlsx_parse",
+      "type": "generated_xlsx",
+      "passed": true,
+      "elapsed_ms": 308,
+      "capability_passed": true,
+      "degraded": false,
+      "quality_score": 1.0,
+      "schema_valid": true,
+      "error_categories": [],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 1.0,
+        "table_f1": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "coverage_proxy": 1.0
+        },
+        "ocr_coverage": 0.75,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 1.0,
+      "table_f1_score": 1.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 1,
+        "toc_entry_count": 0,
+        "evidence_count": 3,
+        "chunk_count": 1,
+        "document_count": 1,
+        "extracted_parameter_count": 6,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 3,
+        "requirement_count": 3,
+        "design_element_count": 0,
+        "verification_item_count": 1,
+        "layout_block_count": 2,
+        "visual_element_count": 0,
+        "table_element_count": 1,
+        "table_row_count": 3,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 1,
+        "degraded_count": 0,
+        "failed_count": 0,
+        "execution_pass_rate": 1.0,
+        "capability_pass_rate": 1.0,
+        "degradation_rate": 0.0
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "case_id": "docx_parse",
+      "type": "generated_docx",
+      "passed": true,
+      "elapsed_ms": 76,
+      "capability_passed": true,
+      "degraded": false,
+      "quality_score": 1.0,
+      "schema_valid": true,
+      "error_categories": [],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 0.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 0.75,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 1.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 1,
+        "toc_entry_count": 0,
+        "evidence_count": 3,
+        "chunk_count": 1,
+        "document_count": 1,
+        "extracted_parameter_count": 2,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 1,
+        "requirement_count": 1,
+        "design_element_count": 1,
+        "verification_item_count": 0,
+        "layout_block_count": 2,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 1,
+        "degraded_count": 0,
+        "failed_count": 0,
+        "execution_pass_rate": 1.0,
+        "capability_pass_rate": 1.0,
+        "degradation_rate": 0.0
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "case_id": "pdf_degraded",
+      "type": "inline",
+      "passed": true,
+      "elapsed_ms": 139,
+      "capability_passed": false,
+      "degraded": true,
+      "quality_score": 0.18,
+      "schema_valid": true,
+      "error_categories": [
+        "parse_error"
+      ],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 0.0,
+        "table_coverage": 0.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 0.0,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        }
+      },
+      "structure_tree_f1_score": 0.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 0,
+        "toc_entry_count": 0,
+        "evidence_count": 0,
+        "chunk_count": 0,
+        "document_count": 1,
+        "extracted_parameter_count": 0,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 0,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 0,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 0,
+        "degraded_count": 1,
+        "failed_count": 1,
+        "execution_pass_rate": 0.0,
+        "capability_pass_rate": 0.0,
+        "degradation_rate": 1.0
+      },
+      "warnings": [
+        "[sample.pdf] PDF extraction failed: [Errno 2] No such file or directory: 'pdftotext'"
+      ],
+      "errors": []
+    },
+    {
+      "case_id": "html_parse",
+      "type": "inline",
+      "passed": true,
+      "elapsed_ms": 5,
+      "capability_passed": true,
+      "degraded": false,
+      "quality_score": 1.0,
+      "schema_valid": true,
+      "error_categories": [],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 1.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 1.0
+        },
+        "ocr_coverage": 0.75,
+        "ocr_cer": {
+          "cer": 0.0,
+          "wer": 0.0,
+          "reference_length": 32,
+          "hypothesis_length": 32
+        },
+        "structure_tree_f1": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 1.0,
+      "table_f1_score": 1.0,
+      "ocr_cer_score": 0.0,
+      "ocr_wer_score": 0.0,
+      "stats": {
+        "section_count": 1,
+        "toc_entry_count": 0,
+        "evidence_count": 5,
+        "chunk_count": 2,
+        "document_count": 1,
+        "extracted_parameter_count": 3,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 1,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 4,
+        "visual_element_count": 0,
+        "table_element_count": 1,
+        "table_row_count": 2,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 1,
+        "degraded_count": 0,
+        "failed_count": 0,
+        "execution_pass_rate": 1.0,
+        "capability_pass_rate": 1.0,
+        "degradation_rate": 0.0
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "case_id": "pptx_parse",
+      "type": "generated_pptx",
+      "passed": true,
+      "elapsed_ms": 2,
+      "capability_passed": true,
+      "degraded": false,
+      "quality_score": 0.9333,
+      "schema_valid": true,
+      "error_categories": [],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 0.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 0.75,
+        "ocr_cer": {
+          "cer": 0.0,
+          "wer": 0.0,
+          "reference_length": 52,
+          "hypothesis_length": 52
+        },
+        "structure_tree_f1": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 1.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": 0.0,
+      "ocr_wer_score": 0.0,
+      "stats": {
+        "section_count": 2,
+        "toc_entry_count": 0,
+        "evidence_count": 4,
+        "chunk_count": 1,
+        "document_count": 1,
+        "extracted_parameter_count": 2,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 1,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 2,
+        "visual_element_count": 0,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 1,
+        "degraded_count": 0,
+        "failed_count": 0,
+        "execution_pass_rate": 1.0,
+        "capability_pass_rate": 1.0,
+        "degradation_rate": 0.0
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "case_id": "image_degraded",
+      "type": "generated_image",
+      "passed": true,
+      "elapsed_ms": 14,
+      "capability_passed": false,
+      "degraded": true,
+      "quality_score": 0.7,
+      "schema_valid": true,
+      "error_categories": [
+        "unsupported_format"
+      ],
+      "evaluation_metrics": {
+        "evidence_coverage": 1.0,
+        "structure_coverage": 1.0,
+        "table_coverage": 0.0,
+        "table_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 0.0
+        },
+        "ocr_coverage": 0.425,
+        "ocr_cer": {
+          "cer": null,
+          "wer": null,
+          "reference_length": 0,
+          "hypothesis_length": 0
+        },
+        "structure_tree_f1": {
+          "f1": null,
+          "precision": null,
+          "recall": null,
+          "coverage_proxy": 1.0
+        }
+      },
+      "structure_tree_f1_score": 1.0,
+      "table_f1_score": 0.0,
+      "ocr_cer_score": null,
+      "ocr_wer_score": null,
+      "stats": {
+        "section_count": 1,
+        "toc_entry_count": 0,
+        "evidence_count": 1,
+        "chunk_count": 1,
+        "document_count": 1,
+        "extracted_parameter_count": 0,
+        "extracted_object_count": 0,
+        "trace_link_candidate_count": 0,
+        "requirement_count": 0,
+        "design_element_count": 0,
+        "verification_item_count": 0,
+        "layout_block_count": 1,
+        "visual_element_count": 1,
+        "table_element_count": 0,
+        "table_row_count": 0,
+        "graph_element_count": 0,
+        "chart_element_count": 0,
+        "parsed_count": 1,
+        "degraded_count": 1,
+        "failed_count": 0,
+        "execution_pass_rate": 1.0,
+        "capability_pass_rate": 0.0,
+        "degradation_rate": 1.0
+      },
+      "warnings": [
+        "[photo.png] 图片已记录低置信视觉摘要；尚未执行高精度图表/工程图还原。"
+      ],
+      "errors": []
+    }
+  ]
+}

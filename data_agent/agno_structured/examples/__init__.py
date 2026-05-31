@@ -1,0 +1,1 @@
+"""Agno structured output examples."""

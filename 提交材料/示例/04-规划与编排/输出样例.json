@@ -1,0 +1,18 @@
+{
+  "_example": true,
+  "_note": "Review-Plus 11 步完成态摘要（字段以 OpenAPI 为准）",
+  "review_id": "rp_yutu1_four_file_001",
+  "gatekeeping": {
+    "passed": true,
+    "slots": {
+      "review_rule": {"status": "filled", "file": "月兔一号_产品保证检查单.docx"},
+      "requirements": {"status": "filled", "file": "月兔一号_飞轮研制任务书.docx"},
+      "design_solution": {"status": "filled", "file": "月兔一号_飞轮设计分析报告.docx"},
+      "attachments": {"status": "filled", "file": "月兔一号_文档检查需求.xlsx"}
+    }
+  },
+  "workflow_steps_completed": 11,
+  "findings_count": 3,
+  "traceability_matrix_rows": 5,
+  "report_markdown_available": true
+}

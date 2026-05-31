@@ -1,0 +1,274 @@
+{
+  "template_id": "GNC_AD",
+  "name": "GNC 姿态确定设计评审（CDR）",
+  "subsystem": "GNC",
+  "review_phase": "CDR",
+  "review_scope": "ad_only",
+  "template_version": "2026.1",
+  "description": "姿态确定（AD）专业组 CDR 阶段审查规则基线。规则按环节组织，供模板门禁、证据池装配与单元规则审查使用。",
+  "required_materials": [
+    {
+      "name": "GNC 设计报告（姿态确定分册）",
+      "description": "含需求分解、误差预算、算法设计、仿真与试验结论",
+      "required": true
+    },
+    {
+      "name": "姿态确定需求与指标分解表",
+      "description": "上级需求到 AD 指标的追溯与量化定义",
+      "required": true
+    },
+    {
+      "name": "姿态确定数学仿真报告",
+      "description": "覆盖稳态/机动等典型工况的仿真结果与统计分析",
+      "required": true
+    },
+    {
+      "name": "单机安装与标定说明",
+      "description": "星敏/陀螺等测量单机安装矩阵与标定残差",
+      "required": false
+    }
+  ],
+  "required_sections": [
+    {
+      "section": "1 姿态确定需求确认与误差分解",
+      "description": "技术指标量化定义、误差预算与分解链路",
+      "required": true,
+      "subsections": [
+        { "title": "1.1 姿态确定技术要求" },
+        { "title": "1.2 误差分解与预算" }
+      ]
+    },
+    {
+      "section": "2 采集时序设计",
+      "description": "测量采样周期、同步策略与时序裕度",
+      "required": true,
+      "subsections": [
+        { "title": "2.1 采样周期与同步" },
+        { "title": "2.2 时序裕度分析" }
+      ]
+    },
+    {
+      "section": "3 姿态测量单机安装指向设计",
+      "description": "安装矩阵、视场约束与标定残差",
+      "required": true,
+      "subsections": [
+        { "title": "3.1 安装矩阵与指向" },
+        { "title": "3.2 标定残差与可用性" }
+      ]
+    },
+    {
+      "section": "4 姿态确定算法设计",
+      "description": "滤波融合、观测方程与鲁棒性设计",
+      "required": true,
+      "subsections": [
+        { "title": "4.1 算法架构与观测方程" },
+        { "title": "4.2 滤波融合与鲁棒性" }
+      ]
+    },
+    {
+      "section": "5 姿态确定数学仿真与结果分析",
+      "description": "仿真工况、结果统计与需求符合性",
+      "required": true,
+      "subsections": [
+        { "title": "5.1 稳态仿真结果" },
+        { "title": "5.2 机动/瞬态仿真结果" }
+      ]
+    }
+  ],
+  "quality_checklist": [
+    "送审材料章节齐全，版本与封面一致",
+    "关键指标均已量化并注明单位与统计口径（如 3σ）",
+    "误差分解链路闭合，无未分配误差项",
+    "仿真工况覆盖需求规定的典型工作模式",
+    "图表编号、指标数值与正文交叉引用一致"
+  ],
+  "ad_review": {
+    "template_version": "2026.1",
+    "global_judgment_rules": [
+      "判定须基于送审文档证据，不得虚构阈值或未出现的指标。",
+      "定量规则须区分工况/阶段标签，不得混用稳态与机动结果。",
+      "证据不足时判定为 insufficient_evidence，不得默认通过。",
+      "同一指标在不同章节出现冲突数值时，须列为一致性发现。"
+    ],
+    "stage_activity_contracts": {
+      "req_err": {
+        "activity": "需求确认与误差分解审查",
+        "summary": "核对姿态确定指标是否量化、可验证，误差预算是否闭合。",
+        "deliverables": [
+          "指标量化清单",
+          "误差分解表",
+          "需求追溯说明"
+        ],
+        "review_rules": [
+          {
+            "rule_id": "AD-REQ-001",
+            "rule_text": "三轴姿态确定精度指标须量化定义，并说明统计口径与适用工况。",
+            "rule_type": "qualitative",
+            "severity": "critical",
+            "source_refs": [
+              {
+                "source_type": "gjb",
+                "source_id": "GJB-ADCS-001",
+                "source_title": "航天器姿态确定设计审查要求",
+                "clause": "5.1"
+              }
+            ],
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AD-Q-001",
+            "rule_text": "三轴姿态确定精度应不大于 0.05 deg（稳态工况）。",
+            "rule_type": "quantitative",
+            "severity": "critical",
+            "formula": "attitude_accuracy",
+            "required_parameters": ["attitude_accuracy"],
+            "parameter_aliases": {
+              "attitude_accuracy": ["三轴姿态确定精度", "姿态确定精度"]
+            },
+            "threshold": 0.05,
+            "compare": "<=",
+            "unit": "deg",
+            "applicability": { "tags": ["稳态"], "scope": "ad_req_err" },
+            "source_refs": [
+              {
+                "source_type": "gjb",
+                "source_id": "GJB-ADCS-001",
+                "clause": "5.2.1"
+              }
+            ],
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AD-REQ-002",
+            "rule_text": "误差分解应覆盖主要误差源，且合计与总指标预算一致。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "timing": {
+        "activity": "采集时序设计审查",
+        "summary": "核对采样周期、同步策略是否满足算法与任务时序要求。",
+        "deliverables": ["时序设计说明", "同步方案"],
+        "review_rules": [
+          {
+            "rule_id": "AD-REQ-010",
+            "rule_text": "应明确各测量通道采样周期、同步基准与时序裕度。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AD-Q-004",
+            "rule_text": "姿态测量采样周期应不大于 100 ms。",
+            "rule_type": "quantitative",
+            "severity": "major",
+            "formula": "sampling_period",
+            "required_parameters": ["sampling_period"],
+            "parameter_aliases": {
+              "sampling_period": ["采样周期", "姿态测量采样周期"]
+            },
+            "threshold": 100,
+            "compare": "<=",
+            "unit": "ms",
+            "applicability": { "scope": "ad_timing" },
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "install": {
+        "activity": "安装指向设计与可用性分析",
+        "summary": "核对安装矩阵、视场约束与标定残差是否满足精度链路。",
+        "deliverables": ["安装矩阵", "标定残差分析"],
+        "review_rules": [
+          {
+            "rule_id": "AD-REQ-020",
+            "rule_text": "应给出测量单机安装矩阵、视场/遮挡约束及可用性分析。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AD-Q-003",
+            "rule_text": "星敏感器安装矩阵标定残差应不大于 0.02 deg。",
+            "rule_type": "quantitative",
+            "severity": "critical",
+            "formula": "star_sensor_calibration_residual",
+            "required_parameters": ["star_sensor_calibration_residual"],
+            "parameter_aliases": {
+              "star_sensor_calibration_residual": ["星敏感器标定残差", "星敏感器精度"]
+            },
+            "threshold": 0.02,
+            "compare": "<=",
+            "unit": "deg",
+            "applicability": { "tags": ["星敏感器"], "scope": "ad_install" },
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "algorithm": {
+        "activity": "姿态确定算法设计审查",
+        "summary": "核对滤波融合、观测方程与鲁棒性设计是否闭合。",
+        "deliverables": ["算法说明", "观测方程与滤波方案"],
+        "review_rules": [
+          {
+            "rule_id": "AD-REQ-030",
+            "rule_text": "应说明姿态表示、观测方程、滤波融合策略及失效/降级处理。",
+            "rule_type": "qualitative",
+            "severity": "critical",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AD-Q-005",
+            "rule_text": "陀螺常值漂移应不大于 0.05 deg/h。",
+            "rule_type": "quantitative",
+            "severity": "major",
+            "formula": "gyro_bias_drift",
+            "required_parameters": ["gyro_bias_drift"],
+            "parameter_aliases": {
+              "gyro_bias_drift": ["陀螺常值漂移", "陀螺漂移"]
+            },
+            "threshold": 0.05,
+            "compare": "<=",
+            "unit": "deg/h",
+            "applicability": { "scope": "ad_algorithm" },
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "simulation": {
+        "activity": "数学仿真与结果分析审查",
+        "summary": "核对仿真工况覆盖度、统计口径与指标符合性。",
+        "deliverables": ["仿真工况表", "结果统计分析", "符合性结论"],
+        "review_rules": [
+          {
+            "rule_id": "AD-REQ-040",
+            "rule_text": "仿真应覆盖需求规定的典型工况，并给出 3σ 等统计结论。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AD-REQ-041",
+            "rule_text": "仿真结果与需求指标、误差预算应交叉一致，矛盾须解释。",
+            "rule_type": "consistency",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      }
+    }
+  }
+}

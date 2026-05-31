@@ -1,0 +1,4 @@
+{"id":"GNC-STD-AD-001","title":"姿态确定精度证据要求","category":"attitude_determination","content":"GNC 姿态确定设计应明确 3σ 精度指标、更新频率、传感器配置和验证方法；关键指标需能追溯到需求和仿真或试验结果。","source":"local_gnc_minimum_standard","severity":"critical","tags":["姿态确定","精度","3σ","验证","REQ-GNC"]}
+{"id":"GNC-STD-AC-001","title":"姿态控制性能证据要求","category":"attitude_control","content":"姿态控制设计应说明控制律、执行机构、稳态误差、大角度机动时间、稳定性裕度和最恶劣工况验证结果。","source":"local_gnc_minimum_standard","severity":"critical","tags":["姿态控制","控制律","稳态误差","机动时间"]}
+{"id":"GNC-STD-FDIR-001","title":"FDIR 闭环证据要求","category":"fdir","content":"FDIR 设计应覆盖故障检测、隔离、恢复、安全模式切换、阈值设置和故障注入验证，检测时间和恢复策略必须有证据支撑。","source":"local_gnc_minimum_standard","severity":"major","tags":["FDIR","故障","检测时间","安全模式"]}
+{"id":"GNC-STD-IF-001","title":"接口一致性证据要求","category":"interface","content":"GNC 与星载计算机、传感器、执行机构之间的 ICD 应明确总线、协议、刷新率、控制周期、时延、数据格式和跨文档一致性。","source":"local_gnc_minimum_standard","severity":"major","tags":["ICD","接口","总线","刷新率","控制周期"]}

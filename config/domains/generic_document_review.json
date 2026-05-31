@@ -1,0 +1,57 @@
+{
+  "domain_id": "generic_document_review",
+  "display_name": "通用文档审查",
+  "specialists": {
+    "document_consistency_reviewer": {
+      "name": "文档一致性审查 Agent",
+      "role": "审查文档结构、术语、数值与跨章节一致性",
+      "triggers": ["all"]
+    },
+    "requirement_alignment_reviewer": {
+      "name": "需求对齐审查 Agent",
+      "role": "审查目标、要求与结论之间的对齐关系",
+      "triggers": ["需求", "目标", "要求", "对齐", "验收", "交付"]
+    },
+    "risk_issue_reviewer": {
+      "name": "风险问题审查 Agent",
+      "role": "识别文档中的错误、风险与缺失项",
+      "triggers": ["错误", "风险", "缺失", "问题", "缺陷", "不一致"]
+    },
+    "data_table_reviewer": {
+      "name": "数据表格审查 Agent",
+      "role": "审查表格、指标与数据一致性",
+      "triggers": ["表格", "指标", "数据", "统计", "数值"]
+    }
+  },
+  "skill_refs": {
+    "document_consistency_reviewer": "review-plus/document-format",
+    "requirement_alignment_reviewer": "review-plus/technical-consistency",
+    "risk_issue_reviewer": "review-plus/product-assurance",
+    "data_table_reviewer": "review-plus/verification"
+  },
+  "specialist_domains": {
+    "document_consistency_reviewer": "文档一致性",
+    "requirement_alignment_reviewer": "需求对齐",
+    "risk_issue_reviewer": "风险问题",
+    "data_table_reviewer": "数据表格"
+  },
+  "harness_agents": {
+    "document_consistency_reviewer": "cross_document_consistency_agent",
+    "requirement_alignment_reviewer": "cross_document_consistency_agent",
+    "risk_issue_reviewer": "product_assurance_agent",
+    "data_table_reviewer": "verification_agent"
+  },
+  "route_signals": {
+    "generic_strong": ["错误", "风险", "一致性", "缺失", "表格", "指标"],
+    "generic_weak": ["要求", "对齐", "验收", "目标"]
+  },
+  "committee_defaults": {
+    "required_specialists": [],
+    "max_specialists": 3,
+    "focus_questions": [
+      "文档结论是否覆盖用户审查目标并可追溯至章节或证据。",
+      "指标、术语与表格数据在全文是否前后一致。",
+      "是否存在明显错误、风险或关键信息缺失。"
+    ]
+  }
+}

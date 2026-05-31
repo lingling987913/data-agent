@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.pytest_cache/
+__pycache__/
+*.pyc
+storage/uploads/
+storage/runs/
+storage
+.dev/
+.prod/
+.cursor/
+ywdata/
+.venv/
+dist/
+*.egg-info/
+web/package-lock.json

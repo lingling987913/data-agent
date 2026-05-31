@@ -1,0 +1,280 @@
+{
+  "domain_id": "aerospace_review",
+  "display_name": "航天设计审查",
+  "specialists": {
+    "document_format_reviewer": {
+      "name": "文档格式与结构审查 Agent",
+      "role": "审查送审材料格式、目录、章节、表格、版本和解析质量",
+      "triggers": ["all"]
+    },
+    "requirements_traceability_reviewer": {
+      "name": "需求追溯审查 Agent",
+      "role": "审查任务书、需求、方案和验证材料之间的闭合关系",
+      "triggers": ["任务书", "需求", "方案", "报告", "REQ", "DES", "SIM"]
+    },
+    "product_assurance_reviewer": {
+      "name": "产品保证审查 Agent",
+      "role": "审查检查单、产品保证要求、可靠性安全性过程符合性",
+      "triggers": ["产品保证", "检查单", "可靠性", "安全性", "质量"]
+    },
+    "reliability_safety_reviewer": {
+      "name": "可靠性安全性审查 Agent",
+      "role": "审查可靠性、安全性、故障模式、单点失效和风险闭环",
+      "triggers": ["可靠性", "安全性", "故障", "失效", "FMEA", "风险", "飞轮"]
+    },
+    "gnc_design_reviewer": {
+      "name": "GNC 设计审查 Agent",
+      "role": "审查制导导航控制方案、姿态/轨道控制闭环和系统级一致性",
+      "triggers": ["GNC", "姿态", "轨道", "导航", "控制", "飞轮", "星敏", "陀螺"]
+    },
+    "attitude_control_reviewer": {
+      "name": "姿态控制专业审查 Agent",
+      "role": "审查控制律、执行机构、卸载、机动和姿态稳定性说明",
+      "triggers": ["姿态控制", "控制律", "执行机构", "飞轮", "力矩", "卸载", "机动"]
+    },
+    "attitude_determination_reviewer": {
+      "name": "姿态确定专业审查 Agent",
+      "role": "审查姿态确定算法、传感器融合、星敏/陀螺配置和精度闭合",
+      "triggers": ["姿态确定", "星敏", "陀螺", "滤波", "定姿", "测量"]
+    },
+    "verification_reviewer": {
+      "name": "验证审查 Agent",
+      "role": "审查验证矩阵、仿真/试验工况覆盖和结果支撑性",
+      "triggers": ["验证", "仿真", "试验", "测试", "工况", "覆盖", "SIM", "TEST"]
+    },
+    "interface_reviewer": {
+      "name": "接口一致性审查 Agent",
+      "role": "审查接口、约束、输入输出、供电/通信/机械边界一致性",
+      "triggers": ["接口", "ICD", "输入", "输出", "供电", "通信", "边界", "约束"]
+    },
+
+    "ad_requirement_error_unit": {
+      "name": "AD-需求确认与误差分解审查单元",
+      "role": "审查姿态确定指向/确定精度需求承接与误差分解的完整性与合理性",
+      "triggers": ["姿态确定", "确定精度", "指向精度", "误差分解", "误差预算", "测量误差", "需求确认"],
+      "unit_group": "ad",
+      "unit_order": 1,
+      "template_sections": ["需求", "确定精度", "误差分解", "误差预算"]
+    },
+    "ad_sampling_timing_unit": {
+      "name": "AD-采集时序设计审查单元",
+      "role": "审查敏感器数据采集时序、采样周期、同步与延迟设计",
+      "triggers": ["采集", "时序", "采样", "采样周期", "同步", "数据刷新", "延迟"],
+      "unit_group": "ad",
+      "unit_order": 2,
+      "template_sections": ["采集时序", "采样", "时序设计"]
+    },
+    "ad_mounting_pointing_unit": {
+      "name": "AD-安装指向设计审查单元",
+      "role": "审查星敏/陀螺等敏感器安装指向、视场遮挡与安装矩阵设计",
+      "triggers": ["安装", "指向", "安装矩阵", "视场", "遮挡", "安装指向"],
+      "unit_group": "ad",
+      "unit_order": 3,
+      "template_sections": ["安装", "指向", "安装矩阵"]
+    },
+    "ad_determination_algorithm_unit": {
+      "name": "AD-姿态确定算法设计审查单元",
+      "role": "审查姿态确定/定姿算法、滤波器与多敏感器融合设计",
+      "triggers": ["姿态确定", "定姿", "滤波", "卡尔曼", "EKF", "算法", "融合", "星敏", "陀螺"],
+      "unit_group": "ad",
+      "unit_order": 4,
+      "template_sections": ["姿态确定算法", "定姿", "滤波"]
+    },
+    "ad_simulation_analysis_unit": {
+      "name": "AD-数学仿真与结果分析审查单元",
+      "role": "审查姿态确定数学仿真工况、统计方法与精度结果分析",
+      "triggers": ["仿真", "数学仿真", "结果分析", "蒙特卡洛", "精度统计", "工况"],
+      "unit_group": "ad",
+      "unit_order": 5,
+      "template_sections": ["仿真", "结果分析"]
+    },
+    "ad_cross_consistency_unit": {
+      "name": "AD-跨环节一致性校核审查单元",
+      "role": "审查姿态确定需求-设计-仿真各环节参数与结论一致性",
+      "triggers": ["一致性", "校核", "跨环节", "闭环", "一致性校核"],
+      "unit_group": "ad",
+      "unit_order": 6,
+      "template_sections": ["一致性", "校核"]
+    },
+    "ad_report_completeness_unit": {
+      "name": "AD-报告完整性审查单元",
+      "role": "审查姿态确定设计报告章节齐套性、结论与遗留问题完整性",
+      "triggers": ["报告", "完整性", "章节", "结论", "遗留问题"],
+      "unit_group": "ad",
+      "unit_order": 7,
+      "template_sections": ["报告", "结论"]
+    },
+
+    "ac_requirement_error_unit": {
+      "name": "AC-需求确认与误差分解审查单元",
+      "role": "审查姿态控制精度/稳定度需求承接与控制误差分解",
+      "triggers": ["姿态控制", "控制精度", "稳定度", "误差分解", "误差预算", "需求确认"],
+      "unit_group": "ac",
+      "unit_order": 1,
+      "template_sections": ["需求", "控制精度", "稳定度", "误差分解"]
+    },
+    "ac_thruster_layout_unit": {
+      "name": "AC-推力器布局设计审查单元",
+      "role": "审查推力器/喷管布局、力臂、推力配置与冗余设计",
+      "triggers": ["推力器", "喷管", "推进", "力臂", "推力布局", "布局"],
+      "unit_group": "ac",
+      "unit_order": 2,
+      "template_sections": ["推力器", "布局", "推进"]
+    },
+    "ac_actuator_layout_unit": {
+      "name": "AC-其他执行机构布局设计审查单元",
+      "role": "审查飞轮/控制力矩陀螺/磁力矩器等执行机构布局与冗余",
+      "triggers": ["执行机构", "飞轮", "力矩陀螺", "CMG", "磁力矩器", "布局", "冗余"],
+      "unit_group": "ac",
+      "unit_order": 3,
+      "template_sections": ["执行机构", "飞轮", "布局"]
+    },
+    "ac_control_law_unit": {
+      "name": "AC-控制律设计审查单元",
+      "role": "审查姿态控制律结构、反馈与稳定性设计",
+      "triggers": ["控制律", "控制器", "PID", "反馈", "闭环", "控制算法"],
+      "unit_group": "ac",
+      "unit_order": 4,
+      "template_sections": ["控制律", "控制算法"]
+    },
+    "ac_control_param_unit": {
+      "name": "AC-控制参数设计审查单元",
+      "role": "审查控制增益、带宽、阻尼等参数整定与裕度设计",
+      "triggers": ["控制参数", "增益", "带宽", "阻尼", "参数整定", "裕度"],
+      "unit_group": "ac",
+      "unit_order": 5,
+      "template_sections": ["控制参数", "增益", "带宽"]
+    },
+    "ac_maneuver_control_unit": {
+      "name": "AC-姿态机动控制律设计审查单元",
+      "role": "审查大角度姿态机动控制律、路径规划与机动约束",
+      "triggers": ["机动", "姿态机动", "大角度", "路径规划", "机动控制"],
+      "unit_group": "ac",
+      "unit_order": 6,
+      "template_sections": ["机动", "姿态机动"]
+    },
+    "ac_momentum_unload_unit": {
+      "name": "AC-角动量卸载律设计审查单元",
+      "role": "审查角动量管理与卸载律（磁卸载/推力卸载）设计",
+      "triggers": ["卸载", "角动量", "磁卸载", "动量管理", "卸载律"],
+      "unit_group": "ac",
+      "unit_order": 7,
+      "template_sections": ["卸载", "角动量"]
+    },
+    "ac_control_simulation_unit": {
+      "name": "AC-姿态控制仿真与结果分析审查单元",
+      "role": "审查姿态控制仿真工况覆盖、稳定性与结果分析",
+      "triggers": ["控制仿真", "仿真", "结果分析", "工况", "稳定性仿真"],
+      "unit_group": "ac",
+      "unit_order": 8,
+      "template_sections": ["仿真", "结果分析"]
+    },
+    "ac_cross_consistency_unit": {
+      "name": "AC-跨环节一致性校核审查单元",
+      "role": "审查姿态控制需求-设计-仿真各环节参数与结论一致性",
+      "triggers": ["一致性", "校核", "跨环节", "闭环", "一致性校核"],
+      "unit_group": "ac",
+      "unit_order": 9,
+      "template_sections": ["一致性", "校核"]
+    },
+    "ac_report_completeness_unit": {
+      "name": "AC-报告完整性审查单元",
+      "role": "审查姿态控制设计报告章节齐套性、结论与遗留问题完整性",
+      "triggers": ["报告", "完整性", "章节", "结论", "遗留问题"],
+      "unit_group": "ac",
+      "unit_order": 10,
+      "template_sections": ["报告", "结论"]
+    }
+  },
+  "skill_refs": {
+    "document_format_reviewer": "review-plus/document-format",
+    "requirements_traceability_reviewer": "review-plus/technical-consistency",
+    "product_assurance_reviewer": "review-plus/product-assurance",
+    "reliability_safety_reviewer": "review-plus/reliability-safety",
+    "gnc_design_reviewer": "review-plus/gnc-design",
+    "attitude_control_reviewer": "review-plus/attitude-control",
+    "attitude_determination_reviewer": "review-plus/attitude-determination",
+    "verification_reviewer": "review-plus/verification",
+    "interface_reviewer": "review-plus/interface-consistency",
+    "ad_requirement_error_unit": "review-plus/attitude-determination",
+    "ad_sampling_timing_unit": "review-plus/attitude-determination",
+    "ad_mounting_pointing_unit": "review-plus/attitude-determination",
+    "ad_determination_algorithm_unit": "review-plus/attitude-determination",
+    "ad_simulation_analysis_unit": "review-plus/verification",
+    "ad_cross_consistency_unit": "review-plus/technical-consistency",
+    "ad_report_completeness_unit": "review-plus/document-format",
+    "ac_requirement_error_unit": "review-plus/attitude-control",
+    "ac_thruster_layout_unit": "review-plus/attitude-control",
+    "ac_actuator_layout_unit": "review-plus/attitude-control",
+    "ac_control_law_unit": "review-plus/attitude-control",
+    "ac_control_param_unit": "review-plus/attitude-control",
+    "ac_maneuver_control_unit": "review-plus/attitude-control",
+    "ac_momentum_unload_unit": "review-plus/attitude-control",
+    "ac_control_simulation_unit": "review-plus/verification",
+    "ac_cross_consistency_unit": "review-plus/technical-consistency",
+    "ac_report_completeness_unit": "review-plus/document-format"
+  },
+  "specialist_domains": {
+    "document_format_reviewer": "文档格式",
+    "requirements_traceability_reviewer": "需求追溯",
+    "product_assurance_reviewer": "产品保证",
+    "reliability_safety_reviewer": "可靠性安全性",
+    "gnc_design_reviewer": "GNC/控制",
+    "attitude_control_reviewer": "姿态控制",
+    "attitude_determination_reviewer": "姿态确定",
+    "verification_reviewer": "验证",
+    "interface_reviewer": "接口一致性",
+    "ad_requirement_error_unit": "姿态确定",
+    "ad_sampling_timing_unit": "姿态确定",
+    "ad_mounting_pointing_unit": "姿态确定",
+    "ad_determination_algorithm_unit": "姿态确定",
+    "ad_simulation_analysis_unit": "姿态确定",
+    "ad_cross_consistency_unit": "姿态确定",
+    "ad_report_completeness_unit": "姿态确定",
+    "ac_requirement_error_unit": "姿态控制",
+    "ac_thruster_layout_unit": "姿态控制",
+    "ac_actuator_layout_unit": "姿态控制",
+    "ac_control_law_unit": "姿态控制",
+    "ac_control_param_unit": "姿态控制",
+    "ac_maneuver_control_unit": "姿态控制",
+    "ac_momentum_unload_unit": "姿态控制",
+    "ac_control_simulation_unit": "姿态控制",
+    "ac_cross_consistency_unit": "姿态控制",
+    "ac_report_completeness_unit": "姿态控制"
+  },
+  "harness_agents": {
+    "product_assurance_reviewer": "product_assurance_agent",
+    "reliability_safety_reviewer": "reliability_safety_agent",
+    "gnc_design_reviewer": "gnc_design_agent",
+    "attitude_control_reviewer": "gnc_design_agent",
+    "attitude_determination_reviewer": "gnc_design_agent",
+    "interface_reviewer": "interface_agent",
+    "verification_reviewer": "verification_agent",
+    "requirements_traceability_reviewer": "cross_document_consistency_agent",
+    "ad_requirement_error_unit": "cross_document_consistency_agent",
+    "ad_sampling_timing_unit": "gnc_design_agent",
+    "ad_mounting_pointing_unit": "gnc_design_agent",
+    "ad_determination_algorithm_unit": "gnc_design_agent",
+    "ad_simulation_analysis_unit": "verification_agent",
+    "ad_cross_consistency_unit": "cross_document_consistency_agent",
+    "ad_report_completeness_unit": "product_assurance_agent",
+    "ac_requirement_error_unit": "cross_document_consistency_agent",
+    "ac_thruster_layout_unit": "gnc_design_agent",
+    "ac_actuator_layout_unit": "gnc_design_agent",
+    "ac_control_law_unit": "gnc_design_agent",
+    "ac_control_param_unit": "gnc_design_agent",
+    "ac_maneuver_control_unit": "gnc_design_agent",
+    "ac_momentum_unload_unit": "gnc_design_agent",
+    "ac_control_simulation_unit": "verification_agent",
+    "ac_cross_consistency_unit": "cross_document_consistency_agent",
+    "ac_report_completeness_unit": "product_assurance_agent"
+  },
+  "committee_defaults": {
+    "max_specialists": 24,
+    "required_specialists": ["document_format_reviewer", "requirements_traceability_reviewer"]
+  },
+  "route_signals": {
+    "gnc_strong": ["gnc", "姿态", "轨控", "卫星", "飞轮", "星敏", "陀螺"],
+    "gnc_weak": ["导航", "控制"]
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "template_id": "GNC_AC",
+  "name": "GNC 姿态控制设计评审（CDR）",
+  "subsystem": "GNC",
+  "review_phase": "CDR",
+  "review_scope": "ac_only",
+  "template_version": "2026.1",
+  "description": "姿态控制（AC）专业组 CDR 阶段审查规则基线。规则按环节组织，供模板门禁、证据池装配与单元规则审查使用。",
+  "required_materials": [
+    {
+      "name": "GNC 设计报告（姿态控制分册）",
+      "description": "含控制指标、执行机构布局、控制律与仿真结论",
+      "required": true
+    },
+    {
+      "name": "姿态控制需求与指标分解表",
+      "description": "上级需求到 AC 指标的追溯与量化定义",
+      "required": true
+    },
+    {
+      "name": "执行机构布局与能力说明",
+      "description": "推力器/飞轮/磁力矩器等布局与能力边界",
+      "required": true
+    },
+    {
+      "name": "控制律与参数设计说明",
+      "description": "控制架构、参数整定、操纵律与卸载律",
+      "required": true
+    },
+    {
+      "name": "姿态控制闭环仿真报告",
+      "description": "覆盖典型机动与稳态工况的闭环仿真结果",
+      "required": true
+    },
+    {
+      "name": "姿控地面试验或半实物仿真报告",
+      "description": "关键控制性能验证数据",
+      "required": false
+    }
+  ],
+  "required_sections": [
+    {
+      "section": "1 姿态控制需求确认与误差分解",
+      "description": "控制指标量化、执行机构能力匹配与误差预算",
+      "required": true,
+      "subsections": [
+        { "title": "1.1 姿态控制技术要求" },
+        { "title": "1.2 执行机构能力与指标分解" }
+      ]
+    },
+    {
+      "section": "2 推力器布局设计",
+      "description": "推力器布置、喷口指向与冗余策略",
+      "required": true,
+      "subsections": [
+        { "title": "2.1 推力器布置方案" },
+        { "title": "2.2 推力偏差与冗余分析" }
+      ]
+    },
+    {
+      "section": "3 其他执行机构布局设计",
+      "description": "飞轮、磁力矩器等布局与角动量管理约束",
+      "required": true,
+      "subsections": [
+        { "title": "3.1 飞轮布局与容量" },
+        { "title": "3.2 磁力矩器与其他执行机构" }
+      ]
+    },
+    {
+      "section": "4 控制律设计",
+      "description": "控制架构、稳定性与鲁棒性设计",
+      "required": true,
+      "subsections": [
+        { "title": "4.1 控制架构与模式切换" },
+        { "title": "4.2 稳定性与鲁棒性分析" }
+      ]
+    },
+    {
+      "section": "5 控制参数设计",
+      "description": "参数整定、裕度与限幅设计",
+      "required": true,
+      "subsections": [
+        { "title": "5.1 参数整定方法" },
+        { "title": "5.2 裕度与限幅" }
+      ]
+    },
+    {
+      "section": "6 操纵律设计",
+      "description": "姿态机动路径规划与机动律",
+      "required": true,
+      "subsections": [
+        { "title": "6.1 机动路径与约束" },
+        { "title": "6.2 大角度机动性能" }
+      ]
+    },
+    {
+      "section": "7 卸载律设计",
+      "description": "角动量卸载策略与饱和保护",
+      "required": true,
+      "subsections": [
+        { "title": "7.1 卸载触发与方式" },
+        { "title": "7.2 饱和保护与扰动影响" }
+      ]
+    },
+    {
+      "section": "8 姿态控制仿真与结果分析",
+      "description": "闭环仿真工况、统计结论与指标符合性",
+      "required": true,
+      "subsections": [
+        { "title": "8.1 稳态控制仿真" },
+        { "title": "8.2 机动与极限工况仿真" }
+      ]
+    }
+  ],
+  "quality_checklist": [
+    "送审材料章节齐全，版本与封面一致",
+    "控制指标均已量化并注明单位与统计口径",
+    "执行机构能力与控制指标匹配关系明确",
+    "控制律、参数、操纵律与卸载律设计链路闭合",
+    "仿真工况覆盖需求规定的典型机动与稳态模式",
+    "推力器冗余与故障模式下的控制能力有说明"
+  ],
+  "ac_review": {
+    "template_version": "2026.1",
+    "global_judgment_rules": [
+      "判定须基于送审文档证据，不得虚构阈值或未出现的指标。",
+      "定量规则须区分稳态与机动工况，不得混用不同场景结果。",
+      "控制律审查须继承上游执行机构布局与能力约束结论。",
+      "证据不足时判定为 insufficient_evidence，不得默认通过。"
+    ],
+    "stage_activity_contracts": {
+      "req_err": {
+        "activity": "需求确认与误差分解审查",
+        "summary": "核对姿态控制指标是否量化，执行机构能力是否匹配。",
+        "deliverables": ["控制指标清单", "能力匹配分析", "误差分解表"],
+        "review_rules": [
+          {
+            "rule_id": "AC-REQ-001",
+            "rule_text": "姿态控制精度、稳定度等关键指标须量化定义并说明适用工况。",
+            "rule_type": "qualitative",
+            "severity": "critical",
+            "source_refs": [
+              {
+                "source_type": "gjb",
+                "source_id": "GJB-ADCS-002",
+                "source_title": "航天器姿态控制设计审查要求",
+                "clause": "4.1"
+              }
+            ],
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-Q-001",
+            "rule_text": "姿态控制稳态误差应不大于 0.02 deg（稳态工况）。",
+            "rule_type": "quantitative",
+            "severity": "critical",
+            "formula": "attitude_control_steady_error",
+            "required_parameters": ["attitude_control_steady_error"],
+            "parameter_aliases": {
+              "attitude_control_steady_error": ["姿态控制稳态误差", "稳态误差", "姿态控制精度"]
+            },
+            "threshold": 0.02,
+            "compare": "<=",
+            "unit": "deg",
+            "applicability": { "tags": ["稳态"], "scope": "ac_req_err" },
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "thruster_layout": {
+        "activity": "推力器布局审查",
+        "summary": "核对推力器布置、喷口指向与推力偏差约束。",
+        "deliverables": ["推力器布局图", "喷口指向分析", "冗余方案"],
+        "review_rules": [
+          {
+            "rule_id": "AC-REQ-010",
+            "rule_text": "应给出推力器布置、喷口指向、耦合矩阵与冗余策略。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-Q-006",
+            "rule_text": "沿轨推力偏差应不大于 3%。",
+            "rule_type": "quantitative",
+            "severity": "major",
+            "formula": "along_track_thrust_deviation",
+            "required_parameters": ["along_track_thrust_deviation"],
+            "parameter_aliases": {
+              "along_track_thrust_deviation": ["沿轨推力偏差", "沿轨偏差"]
+            },
+            "threshold": 3,
+            "compare": "<=",
+            "unit": "%",
+            "applicability": { "scope": "ac_thruster_layout" },
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-Q-007",
+            "rule_text": "横向推力偏差应不大于 1.5%。",
+            "rule_type": "quantitative",
+            "severity": "major",
+            "formula": "cross_track_thrust_deviation",
+            "required_parameters": ["cross_track_thrust_deviation"],
+            "parameter_aliases": {
+              "cross_track_thrust_deviation": ["横向推力偏差", "横向偏差"]
+            },
+            "threshold": 1.5,
+            "compare": "<=",
+            "unit": "%",
+            "applicability": { "scope": "ac_thruster_layout" },
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "other_actuator_layout": {
+        "activity": "其他执行机构布局审查",
+        "summary": "核对飞轮、磁力矩器等布局与角动量容量。",
+        "deliverables": ["执行机构布局说明", "角动量容量分析"],
+        "review_rules": [
+          {
+            "rule_id": "AC-REQ-020",
+            "rule_text": "应说明飞轮/磁力矩器布局、角动量容量与饱和保护约束。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-Q-002",
+            "rule_text": "飞轮最大角动量应不小于 30 N·m·s。",
+            "rule_type": "quantitative",
+            "severity": "major",
+            "formula": "wheel_max_momentum",
+            "required_parameters": ["wheel_max_momentum"],
+            "parameter_aliases": {
+              "wheel_max_momentum": ["飞轮最大角动量", "飞轮角动量容量"]
+            },
+            "threshold": 30,
+            "compare": ">=",
+            "unit": "N·m·s",
+            "applicability": { "scope": "ac_other_actuator_layout" },
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "control_law": {
+        "activity": "控制律设计审查",
+        "summary": "核对控制架构、模式切换与稳定性分析。",
+        "deliverables": ["控制律说明", "稳定性分析"],
+        "review_rules": [
+          {
+            "rule_id": "AC-REQ-030",
+            "rule_text": "应说明控制架构、模式切换条件、稳定性与鲁棒性设计。",
+            "rule_type": "qualitative",
+            "severity": "critical",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-REQ-031",
+            "rule_text": "安全模式/降级控制律应明确定义切换条件与保持能力。",
+            "rule_type": "qualitative",
+            "severity": "critical",
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "control_params": {
+        "activity": "姿控参数设计审查",
+        "summary": "核对参数整定、裕度与限幅设计。",
+        "deliverables": ["参数整定说明", "裕度分析"],
+        "review_rules": [
+          {
+            "rule_id": "AC-REQ-040",
+            "rule_text": "控制参数整定应给出依据，并说明带宽、裕度与限幅设置。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-Q-005",
+            "rule_text": "控制带宽应不小于 0.5 Hz。",
+            "rule_type": "quantitative",
+            "severity": "major",
+            "formula": "control_bandwidth",
+            "required_parameters": ["control_bandwidth"],
+            "parameter_aliases": {
+              "control_bandwidth": ["控制带宽", "带宽"]
+            },
+            "threshold": 0.5,
+            "compare": ">=",
+            "unit": "Hz",
+            "applicability": { "scope": "ac_control_params" },
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-Q-003",
+            "rule_text": "姿态控制稳定度应不大于 0.001 deg/s。",
+            "rule_type": "quantitative",
+            "severity": "major",
+            "formula": "attitude_stability",
+            "required_parameters": ["attitude_stability"],
+            "parameter_aliases": {
+              "attitude_stability": ["姿态控制稳定度", "稳定度"]
+            },
+            "threshold": 0.001,
+            "compare": "<=",
+            "unit": "deg/s",
+            "applicability": { "tags": ["稳态"], "scope": "ac_control_params" },
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "maneuver_law": {
+        "activity": "操纵律设计审查",
+        "summary": "核对机动路径、时间约束与执行机构使用。",
+        "deliverables": ["操纵律说明", "机动性能分析"],
+        "review_rules": [
+          {
+            "rule_id": "AC-REQ-050",
+            "rule_text": "应说明姿态机动路径规划、约束条件与模式协调关系。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-Q-004",
+            "rule_text": "大角度机动时间应不大于 120 s。",
+            "rule_type": "quantitative",
+            "severity": "critical",
+            "formula": "maneuver_time",
+            "required_parameters": ["maneuver_time"],
+            "parameter_aliases": {
+              "maneuver_time": ["大角度机动时间", "姿态机动时间", "机动时间"]
+            },
+            "threshold": 120,
+            "compare": "<=",
+            "unit": "s",
+            "applicability": { "tags": ["机动", "大角度"], "scope": "ac_maneuver_law" },
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "unloading_law": {
+        "activity": "卸载律设计审查",
+        "summary": "核对角动量卸载策略与饱和保护。",
+        "deliverables": ["卸载律说明", "饱和保护分析"],
+        "review_rules": [
+          {
+            "rule_id": "AC-REQ-060",
+            "rule_text": "应说明卸载触发条件、卸载方式及对控制性能的影响。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      },
+      "simulation": {
+        "activity": "姿控仿真审查",
+        "summary": "核对闭环仿真工况覆盖度与指标符合性。",
+        "deliverables": ["仿真工况表", "结果统计分析", "符合性结论"],
+        "review_rules": [
+          {
+            "rule_id": "AC-REQ-070",
+            "rule_text": "闭环仿真应覆盖稳态、机动及典型故障/降级工况。",
+            "rule_type": "qualitative",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          },
+          {
+            "rule_id": "AC-REQ-071",
+            "rule_text": "仿真结果与需求指标、控制参数应交叉一致，矛盾须解释。",
+            "rule_type": "consistency",
+            "severity": "major",
+            "version": "2026.1",
+            "status": "active"
+          }
+        ]
+      }
+    }
+  }
+}

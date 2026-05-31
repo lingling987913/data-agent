@@ -1,0 +1,26 @@
+{
+  "_example": true,
+  "_note": "任务一多格式 structuring 结果示意（字段名以 OpenAPI 为准）",
+  "task_id": "task_q1_four_file_001",
+  "status": "completed",
+  "steps": [
+    {"name": "ingest", "status": "completed", "detail": "4 files: 3 docx + 1 xlsx"},
+    {"name": "parse", "status": "completed", "detail": "python-docx + openpyxl"},
+    {"name": "structure", "status": "completed"},
+    {"name": "review_plus_delegate", "status": "completed", "detail": "≥4 files auto route"},
+    {"name": "evaluate", "status": "completed"}
+  ],
+  "result": {
+    "document_count": 4,
+    "section_count": 24,
+    "evidence_count": 18,
+    "table_rows_extracted": 6,
+    "quality_score": 0.82,
+    "execution_metrics_snapshot": {
+      "parser_coverage": 1.0,
+      "structure_tree_nodes": 24
+    },
+    "parser_fallback_logs": []
+  },
+  "warnings": []
+}

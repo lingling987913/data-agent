@@ -1,0 +1,3 @@
+{"id":"GNC-KB-001","title":"常见问题：指标有设计无验证","category":"traceability","content":"GNC 审查中常见问题是设计报告给出姿态精度或控制误差，但仿真报告没有对应 SIM 项或统计说明，应标记为验证闭环不足。","source":"local_review_experience","severity":"major","tags":["验证闭环","SIM","设计响应"]}
+{"id":"GNC-KB-002","title":"常见问题：接口周期跨文档不一致","category":"interface","content":"若设计报告、ICD 和软件说明中的控制周期、遥测周期或刷新率不一致，应作为跨文档接口一致性问题提交。","source":"local_review_experience","severity":"major","tags":["接口","控制周期","刷新率","跨文档"]}
+{"id":"GNC-KB-003","title":"常见问题：FDIR 阈值缺少工况依据","category":"fdir","content":"故障检测阈值需要说明误报、漏报、最恶劣工况和故障注入验证；仅给出阈值没有依据时应判为证据不足。","source":"local_review_experience","severity":"major","tags":["FDIR","阈值","故障注入"]}

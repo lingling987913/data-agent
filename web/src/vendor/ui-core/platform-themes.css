@@ -1,0 +1,329 @@
+  /* ===== 科技淡蓝主题 (默认) ===== */
+  :root,
+  [data-theme='tech-blue'] {
+    --color-primary: 30 58 95;
+    --color-primary-accent: 14 165 233;
+    --color-brand: 59 130 246;
+    --color-background: 235 244 250;
+    --color-background-secondary: 212 229 247;
+    --color-surface: 255 255 255;
+    --color-text-primary: 30 58 95;
+    --color-text-secondary: 100 116 139;
+    --color-border: 30 58 95;
+    --color-accent: 204 220 235;
+    --color-muted: 100 116 139;
+    --color-destructive: 239 68 68;
+    --color-positive: 34 197 94;
+
+    --color-tech-light: 240 249 255;
+    --color-tech: 224 242 254;
+    --color-tech-mid: 186 230 253;
+    --color-tech-dark: 3 105 161;
+    --color-tech-darker: 12 74 110;
+    --color-tech-glass: 59 130 246;
+
+    --color-sa-red: 200 21 42;
+    --color-sa-red-dark: 139 15 30;
+    --color-sa-gold: 232 155 44;
+    --color-sa-bg-deep: 240 249 255;
+    --color-sa-alert-red: 255 77 79;
+    --color-sa-glass-bg: 255 255 255;
+
+    --scrollbar-width: 0.25rem;
+    --scrollbar-thumb: linear-gradient(180deg, #0EA5E9 0%, #3B82F6 100%);
+    --scrollbar-track: rgba(186, 230, 253, 0.3);
+
+    --domain-brand: 59 130 246;
+    --domain-accent: 14 165 233;
+    --domain-surface-tint: 204 220 235;
+    --domain-chart-1: 59 130 246;
+    --domain-chart-2: 14 165 233;
+    --domain-chart-3: 34 197 94;
+    --domain-chart-4: 251 146 60;
+    --domain-chart-5: 168 85 247;
+    --domain-chart-6: 236 72 153;
+  }
+
+  /* ===== 科技暗黑主题 ===== */
+  [data-theme='tech-dark'] {
+    --color-primary: 129 199 247;
+    --color-primary-accent: 56 189 248;
+    --color-brand: 96 165 250;
+    --color-background: 9 9 11;
+    --color-background-secondary: 24 24 27;
+    --color-surface: 39 39 42;
+    --color-text-primary: 250 250 250;
+    --color-text-secondary: 161 161 170;
+    --color-border: 63 63 70;
+    --color-accent: 39 39 42;
+    --color-muted: 113 113 122;
+    --color-destructive: 248 113 113;
+    --color-positive: 74 222 128;
+
+    --color-tech-light: 24 24 27;
+    --color-tech: 39 39 42;
+    --color-tech-mid: 63 63 70;
+    --color-tech-dark: 125 211 252;
+    --color-tech-darker: 186 230 253;
+    --color-tech-glass: 56 189 248;
+
+    --color-sa-red: 248 113 113;
+    --color-sa-red-dark: 239 68 68;
+    --color-sa-gold: 251 191 36;
+    --color-sa-bg-deep: 24 24 27;
+    --color-sa-alert-red: 248 113 113;
+    --color-sa-glass-bg: 39 39 42;
+
+    --scrollbar-thumb: linear-gradient(180deg, #38BDF8 0%, #60A5FA 100%);
+    --scrollbar-track: rgba(39, 39, 42, 0.8);
+
+    --domain-brand: 96 165 250;
+    --domain-accent: 56 189 248;
+    --domain-surface-tint: 39 39 42;
+    --domain-chart-1: 96 165 250;
+    --domain-chart-2: 56 189 248;
+    --domain-chart-3: 74 222 128;
+    --domain-chart-4: 251 191 36;
+    --domain-chart-5: 192 132 252;
+    --domain-chart-6: 244 114 182;
+  }
+
+  /* ===== 深空主题 · SpaceX Crew Dragon 风 ===== */
+  /* 纯黑 + 银白文字 + 冷蓝交互 + 绿/黄/红状态语义（保留 nominal=绿 行业惯例） */
+  [data-theme='aero-dark'] {
+    --color-primary: 255 255 255;
+    --color-primary-accent: 184 192 204;
+    --color-brand: 79 143 247;
+    --color-background: 10 10 10;
+    --color-background-secondary: 22 24 29;
+    --color-surface: 22 24 29;
+    --color-text-primary: 255 255 255;
+    --color-text-secondary: 184 192 204;
+    --color-border: 42 45 51;
+    --color-accent: 30 33 38;
+    --color-muted: 116 124 136;
+    --color-destructive: 248 113 113;
+    --color-positive: 46 160 67;
+
+    --color-tech-light: 22 24 29;
+    --color-tech: 30 33 38;
+    --color-tech-mid: 42 45 51;
+    --color-tech-dark: 184 192 204;
+    --color-tech-darker: 255 255 255;
+    --color-tech-glass: 79 143 247;
+
+    --color-sa-red: 248 113 113;
+    --color-sa-red-dark: 239 68 68;
+    --color-sa-gold: 240 180 41;
+    --color-sa-bg-deep: 10 10 10;
+    --color-sa-alert-red: 248 113 113;
+    --color-sa-glass-bg: 22 24 29;
+
+    --scrollbar-thumb: linear-gradient(180deg, #B8C0CC 0%, #4F8FF7 100%);
+    --scrollbar-track: rgba(22, 24, 29, 0.85);
+
+    --domain-brand: 79 143 247;
+    --domain-accent: 184 192 204;
+    --domain-surface-tint: 22 24 29;
+    --domain-chart-1: 79 143 247;
+    --domain-chart-2: 184 192 204;
+    --domain-chart-3: 46 160 67;
+    --domain-chart-4: 56 189 248;
+    --domain-chart-5: 248 113 113;
+    --domain-chart-6: 240 180 41;
+  }
+
+  /* ===== 航天运控主题 · High Performance HMI / ISA-101 ===== */
+  /* 中性灰底 + 米白文字 + 正常态低饱和 + 颜色仅留给告警，控制室长时间监控友好 */
+  [data-theme='aero-ops'] {
+    --color-primary: 226 229 234;
+    --color-primary-accent: 156 168 180;
+    --color-brand: 156 168 180;
+    --color-background: 45 48 54;
+    --color-background-secondary: 56 59 66;
+    --color-surface: 56 59 66;
+    --color-text-primary: 226 229 234;
+    --color-text-secondary: 160 164 171;
+    --color-border: 74 77 84;
+    --color-accent: 50 53 60;
+    --color-muted: 130 134 143;
+    --color-destructive: 224 60 60;
+    --color-positive: 138 168 136;
+
+    --color-tech-light: 56 59 66;
+    --color-tech: 50 53 60;
+    --color-tech-mid: 74 77 84;
+    --color-tech-dark: 156 168 180;
+    --color-tech-darker: 226 229 234;
+    --color-tech-glass: 156 168 180;
+
+    --color-sa-red: 224 60 60;
+    --color-sa-red-dark: 194 40 40;
+    --color-sa-gold: 240 180 41;
+    --color-sa-bg-deep: 45 48 54;
+    --color-sa-alert-red: 224 60 60;
+    --color-sa-glass-bg: 56 59 66;
+
+    --scrollbar-thumb: linear-gradient(180deg, #6B8FB5 0%, #9CA8B4 100%);
+    --scrollbar-track: rgba(56, 59, 66, 0.85);
+
+    --domain-brand: 156 168 180;
+    --domain-accent: 122 169 196;
+    --domain-surface-tint: 56 59 66;
+    --domain-chart-1: 107 143 181;
+    --domain-chart-2: 122 169 196;
+    --domain-chart-3: 156 168 180;
+    --domain-chart-4: 138 168 136;
+    --domain-chart-5: 240 180 41;
+    --domain-chart-6: 224 60 60;
+  }
+
+  /* ===== 党政红主题 ===== */
+  [data-theme='gov-red'] {
+    --color-primary: 180 30 30;
+    --color-primary-accent: 200 45 45;
+    --color-brand: 180 30 30;
+    --color-background: 249 250 251;
+    --color-background-secondary: 243 244 246;
+    --color-surface: 255 255 255;
+    --color-text-primary: 31 41 55;
+    --color-text-secondary: 107 114 128;
+    --color-border: 209 213 219;
+    --color-accent: 254 242 242;
+    --color-muted: 107 114 128;
+    --color-destructive: 220 38 38;
+    --color-positive: 22 163 74;
+
+    --color-tech-light: 249 250 251;
+    --color-tech: 243 244 246;
+    --color-tech-mid: 209 213 219;
+    --color-tech-dark: 180 30 30;
+    --color-tech-darker: 127 29 29;
+    --color-tech-glass: 200 45 45;
+
+    --color-sa-red: 180 30 30;
+    --color-sa-red-dark: 127 29 29;
+    --color-sa-gold: 202 138 4;
+    --color-sa-bg-deep: 254 242 242;
+    --color-sa-alert-red: 220 38 38;
+    --color-sa-glass-bg: 255 255 255;
+
+    --scrollbar-thumb: linear-gradient(180deg, #B41E1E 0%, #7F1D1D 100%);
+    --scrollbar-track: rgba(209, 213, 219, 0.5);
+
+    --domain-brand: 180 30 30;
+    --domain-accent: 200 45 45;
+    --domain-surface-tint: 254 242 242;
+    --domain-chart-1: 180 30 30;
+    --domain-chart-2: 202 138 4;
+    --domain-chart-3: 22 163 74;
+    --domain-chart-4: 37 99 235;
+    --domain-chart-5: 127 29 29;
+    --domain-chart-6: 107 114 128;
+  }
+
+  /* ===== 政务暖蓝主题 ===== */
+  [data-theme='gov-warm'] {
+    --color-primary: 36 33 30;
+    --color-primary-accent: 168 95 85;
+    --color-brand: 102 125 181;
+    --color-background: 247 245 241;
+    --color-background-secondary: 251 248 243;
+    --color-surface: 255 253 250;
+    --color-text-primary: 36 33 30;
+    --color-text-secondary: 126 118 109;
+    --color-border: 83 70 55;
+    --color-accent: 238 242 251;
+    --color-muted: 126 118 109;
+    --color-destructive: 212 117 110;
+    --color-positive: 93 149 137;
+
+    --color-tech-light: 255 253 250;
+    --color-tech: 251 248 243;
+    --color-tech-mid: 232 228 223;
+    --color-tech-dark: 102 125 181;
+    --color-tech-darker: 78 94 138;
+    --color-tech-glass: 168 95 85;
+
+    --color-sa-red: 168 95 85;
+    --color-sa-red-dark: 132 70 63;
+    --color-sa-gold: 170 122 58;
+    --color-sa-bg-deep: 247 245 241;
+    --color-sa-alert-red: 212 117 110;
+    --color-sa-glass-bg: 255 253 250;
+
+    --scrollbar-thumb: linear-gradient(180deg, #667DB5 0%, #A85F55 100%);
+    --scrollbar-track: rgba(83, 70, 55, 0.12);
+
+    --domain-brand: 102 125 181;
+    --domain-accent: 168 95 85;
+    --domain-surface-tint: 238 242 251;
+    --domain-chart-1: 102 125 181;
+    --domain-chart-2: 168 95 85;
+    --domain-chart-3: 93 149 137;
+    --domain-chart-4: 170 122 58;
+    --domain-chart-5: 126 118 109;
+    --domain-chart-6: 212 117 110;
+  }
+
+  /* ===== Warm Minimal 主题 ===== */
+  [data-theme='warm-minimal'] {
+    --color-primary: 90 74 62;
+    --color-primary-accent: 196 137 104;
+    --color-brand: 214 162 122;
+    --color-background: 247 241 233;
+    --color-background-secondary: 240 230 219;
+    --color-surface: 255 250 244;
+    --color-text-primary: 90 74 62;
+    --color-text-secondary: 133 116 103;
+    --color-border: 196 182 170;
+    --color-accent: 232 217 203;
+    --color-muted: 148 132 118;
+    --color-destructive: 196 90 74;
+    --color-positive: 96 142 115;
+
+    --color-tech-light: 255 250 244;
+    --color-tech: 244 236 227;
+    --color-tech-mid: 222 207 193;
+    --color-tech-dark: 196 137 104;
+    --color-tech-darker: 140 103 80;
+    --color-tech-glass: 214 162 122;
+
+    --color-sa-red: 196 90 74;
+    --color-sa-red-dark: 156 67 53;
+    --color-sa-gold: 202 152 88;
+    --color-sa-bg-deep: 247 241 233;
+    --color-sa-alert-red: 196 90 74;
+    --color-sa-glass-bg: 255 250 244;
+
+    --scrollbar-thumb: linear-gradient(180deg, #D6A27A 0%, #C48968 100%);
+    --scrollbar-track: rgba(222, 207, 193, 0.45);
+
+    --domain-brand: 214 162 122;
+    --domain-accent: 196 137 104;
+    --domain-surface-tint: 232 217 203;
+    --domain-chart-1: 196 137 104;
+    --domain-chart-2: 96 142 115;
+    --domain-chart-3: 202 152 88;
+    --domain-chart-4: 196 90 74;
+    --domain-chart-5: 140 103 80;
+    --domain-chart-6: 148 132 118;
+  }
+
+  :root,
+  [data-theme] {
+    --color-foreground: var(--color-text-primary);
+    --color-input: var(--color-border);
+    --color-ring: var(--color-primary-accent);
+    --color-primary-foreground: 255 255 255;
+    --color-secondary-foreground: var(--color-text-primary);
+    --color-destructive-foreground: 255 255 255;
+    --color-accent-foreground: var(--color-text-primary);
+  }
+
+  body {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }

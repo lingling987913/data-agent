@@ -1,0 +1,35 @@
+{
+  "document": {
+    "title": "设计过程符合性审查单",
+    "subtitle": "用于多文档设计过程符合性审查结论归档、问题闭环与复审记录留存。",
+    "issuingOrg": "质量与可靠性中心",
+    "headerTitle": "设计过程符合性审查文件",
+    "footerNote": "本审查单用于审查结论归档、问题闭环和打印留痕。",
+    "paper": "A4",
+    "fontFamily": "\"FangSong\", \"STFangsong\", \"SimSun\", \"Songti SC\", serif",
+    "headingFontFamily": "\"SimHei\", \"Heiti SC\", \"Microsoft YaHei\", sans-serif",
+    "titleFontFamily": "\"SimSun\", \"Songti SC\", \"STSong\", serif"
+  },
+  "layout": {
+    "pageMarginMm": "25.4mm 31.7mm 25.4mm 31.7mm",
+    "titleFontSize": "22pt",
+    "subtitleFontSize": "12pt",
+    "bodyFontSize": "14pt",
+    "tableFontSize": "10.5pt",
+    "sectionTitleFontSize": "15pt",
+    "headerFontSize": "9pt",
+    "footerFontSize": "9pt",
+    "lineHeight": "175%"
+  },
+  "palette": {
+    "pageBg": "#ffffff",
+    "sheetBg": "#ffffff",
+    "border": "#000000",
+    "heading": "#000000",
+    "text": "#000000",
+    "muted": "#333333",
+    "accent": "#000000",
+    "tableHeadBg": "#f2f2f2",
+    "headerRule": "#cc0000"
+  }
+}

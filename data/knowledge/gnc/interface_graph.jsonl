@@ -1,0 +1,3 @@
+{"id":"GNC-IF-001","title":"GNC-OBC 姿态数据接口","category":"interface_graph","content":"GNC 与星载计算机通过 1553B 或等效总线交换四元数、角速度、控制指令和遥测状态；关键字段包括数据格式、刷新率、控制周期和时延。","source":"local_interface_graph","severity":"major","tags":["GNC","OBC","1553B","四元数","控制周期"]}
+{"id":"GNC-IF-002","title":"GNC-执行机构控制接口","category":"interface_graph","content":"GNC 对反作用飞轮、磁力矩器、推力器等执行机构输出控制指令，需核查力矩/推力范围、饱和、限幅和故障反馈状态。","source":"local_interface_graph","severity":"major","tags":["执行机构","飞轮","推力器","限幅","故障反馈"]}
+{"id":"GNC-IF-003","title":"GNC-传感器测量接口","category":"interface_graph","content":"GNC 接收星敏、陀螺、太阳敏感器等测量数据，需核查采样周期、时间同步、坐标系、安装矩阵和有效性标志。","source":"local_interface_graph","severity":"major","tags":["星敏","陀螺","采样周期","时间同步","安装矩阵"]}

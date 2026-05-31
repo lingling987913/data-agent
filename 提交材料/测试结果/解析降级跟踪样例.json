@@ -1,0 +1,24 @@
+{
+  "_note": "脱敏样例：单文件 PDF 解析降级链，字段对齐 parser_fallback_logs / record_parser_fallback。",
+  "file_name": "CMG50_验收报告.pdf",
+  "parser_fallback_logs": [
+    {
+      "timestamp": "2026-05-31T12:01:00+00:00",
+      "source_parser": "mineru_local",
+      "fallback_parser": "mineru_agent",
+      "reason": "local MinerU HTTP 503 (demo)",
+      "recovered": false,
+      "elapsed_ms": 800
+    },
+    {
+      "timestamp": "2026-05-31T12:01:02+00:00",
+      "source_parser": "mineru_agent",
+      "fallback_parser": "pdftotext",
+      "reason": "agent timeout (demo)",
+      "recovered": true,
+      "elapsed_ms": 450
+    }
+  ],
+  "final_parser": "pdftotext",
+  "degraded": true
+}
