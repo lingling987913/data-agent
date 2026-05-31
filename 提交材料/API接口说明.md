@@ -223,7 +223,7 @@ sequenceDiagram
 ## 与 Review-Plus / Super Agent 的关系
 
 - **竞赛 API**：一次提交、轮询结果，适合评测脚本。
-- **Review-Plus**（`/api/v1/review-plus/reviews/*`）：分步上传、门禁、11 步 workflow，见启动后 `/docs` 中 **review-plus** 标签。
+- **Review-Plus**（`/api/v1/review-plus/reviews/*`）：分步上传、门禁、多步审查 workflow（多 Agent 协同），见启动后 `/docs` 中 **review-plus** 标签。
 - **Super Agent**（`/api/v1/super-agent/runs`）：统一门面与路由，示例 03 跨文档路径见 [示例/03-跨文档指代/README.md](./示例/03-跨文档指代/README.md)。
 
 ## 代码索引
