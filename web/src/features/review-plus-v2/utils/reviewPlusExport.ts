@@ -275,11 +275,8 @@ function buildIssueRows(task: ReviewPlusTaskDetail): string {
 
 function buildCrossDocRows(task: ReviewPlusTaskDetail): string {
   const report = task.report
-  const crossDocItems = (report?.cross_document_items as Array<Record<string, unknown>> | undefined)
-    ?? task.cross_document_review_items?.map((item) => ({
-      title: item.title,
-      description: item.description,
-    }))
+  const crossDocItems: Array<Record<string, unknown>> = (report?.cross_document_items as Array<Record<string, unknown>> | undefined)
+    ?? task.cross_document_review_items
     ?? []
 
   if (!crossDocItems.length) {

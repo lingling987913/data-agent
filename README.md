@@ -115,7 +115,8 @@ data-agent/
 ├── benchmark/               # 离线 Golden 门禁与压测
 ├── config/domains/          # 领域 JSON 配置
 ├── data/                    # 模板、知识库等静态数据
-├── scripts/                 # dev.sh / prod.sh 一键启停
+├── scripts/                 # deploy.sh / dev.sh / prod.sh 一键启停
+├── docs/                    # 新人部署与配置说明
 ├── storage/                 # 运行时数据（gitignore）
 └── 提交材料/                # 比赛提交包
 ```
@@ -145,6 +146,23 @@ data-agent/
 | poppler-utils | 可选，提供 `pdftotext` 作为 PDF 兜底 |
 | LLM / VLM | 审查、编排、图块描述等；未配置时部分步骤规则/占位降级 |
 | MinerU | 复杂 PDF/扫描件主通道；不可达时降级 `pdftotext` |
+
+---
+
+## 新人上手（前后端一体化）
+
+刚 clone 仓库时，在根目录执行：
+
+```bash
+chmod +x scripts/deploy.sh scripts/prod.sh scripts/dev.sh
+./scripts/deploy.sh              # 安装依赖 + 生成 .env + 生产模式启动（8080 + 3000）
+./scripts/deploy.sh --setup-only # 只装依赖、复制环境文件，不启动
+./scripts/deploy.sh --dev        # 开发模式（8081 + 3000）
+./scripts/deploy.sh --check      # 检查必配项是否为占位符
+./scripts/deploy.sh -k           # 停止
+```
+
+**需要改哪些配置**（必配 Token、建议 LLM/MinerU、公网暴露等）见 **[docs/部署与配置说明.md](docs/部署与配置说明.md)**。
 
 ---
 
@@ -205,13 +223,19 @@ uv run uvicorn data_agent.main:app --host 0.0.0.0 --port 8080
 ### 前后端一键启动
 
 ```bash
+# 新人推荐（含依赖安装 + .env 初始化）
+./scripts/deploy.sh
+
 # 开发（后端 8081 + 前端 3000）
 ./scripts/dev.sh
+# 或
+./scripts/deploy.sh --dev
 
 # 生产模式（后端 8080 + Next.js standalone）
 ./scripts/prod.sh
 
 # 停止
+./scripts/deploy.sh -k
 ./scripts/dev.sh -k
 ./scripts/prod.sh -k
 ```
