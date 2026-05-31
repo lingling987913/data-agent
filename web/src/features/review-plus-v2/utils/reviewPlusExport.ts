@@ -268,7 +268,7 @@ function buildIssueRows(task: ReviewPlusTaskDetail): string {
                 <td>${escapeHtml(SEVERITY_LABELS[String(finding.severity || '').toLowerCase()] || finding.severity || '—')}</td>
                 <td>${escapeHtml(JUDGMENT_LABELS[String(finding.judgment || '')] || finding.judgment || '—')}</td>
                 <td>${escapeHtml(finding.title || '未命名发现')}</td>
-                <td>${escapeHtml(finding.reasoning || finding.description || '—')}</td>
+                <td>${escapeHtml(finding.reasoning || finding.recommendation || finding.source_quote || '—')}</td>
             </tr>
         `).join('')
 }
